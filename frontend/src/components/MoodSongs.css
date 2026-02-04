@@ -1,0 +1,68 @@
+/* MoodSongs.css */
+.mood-songs {
+  width: 100%;
+  text-align: left;
+}
+
+.mood-songs h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.song {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.song:hover {
+  background-color: #2a2a2a;
+}
+
+/* Style for the currently playing song */
+.song:has(.ri-pause-circle-line) {
+  border-color: var(--accent-color);
+  background-color: rgba(29, 185, 84, 0.1);
+}
+
+.title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.title p {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.play-pause-button button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-color);
+  font-size: 2.5rem; /* Makes the icon big */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.play-pause-button button:hover {
+  transform: scale(1.1);
+  color: var(--accent-hover);
+}
+
+.play-pause-button button:active {
+  transform: scale(0.95);
+}

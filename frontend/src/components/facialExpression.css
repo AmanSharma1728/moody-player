@@ -1,0 +1,45 @@
+/* facialExpression.css */
+.mood-element {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-video-feed {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  border: 2px solid #333;
+  transform: scaleX(-1); /* Mirrors the camera like a mirror */
+}
+
+.mood-element button {
+  background-color: var(--accent-color);
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mood-element button:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.mood-element h3 {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
