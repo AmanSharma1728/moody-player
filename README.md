@@ -1,64 +1,133 @@
-# **🎵 Moody Player: AI-Powered Adaptive Streaming**
+# 🎵 Moody Player – Emotion-Based Music Recommendation System
 
-**Moody Player** is a next-gen music streaming application that bridges **Artificial Intelligence** and **Cloud Computing**. It leverages client-side computer vision (TensorFlow-based) to perform real-time emotion inference, dynamically serving high-fidelity audio streams from a cloud CDN based on the user's current mood.
+Moody Player is a full-stack MERN web application that recommends songs based on the user's facial emotions. The application uses FaceAPI.js to detect emotions through the webcam and suggests songs accordingly. Music files are stored and delivered using ImageKit, providing fast and reliable media access.
 
-## **⚡ Technical Highlights**
+---
 
-* **🧠 Real-Time Inference:** Uses face-api.js (built on TensorFlow.js) to detect micro-expressions directly in the browser with zero latency.  
-* **📡 Cloud-Native Streaming:** Integrates with **ImageKit** for scalable object storage and low-latency global content delivery.  
-* **🚀 Efficient Data Pipeline:** Backend utilizes **Multer memory storage** to handle high-throughput file buffering without disk I/O bottlenecks.  
-* **🔗 RESTful Architecture:** Built on a decoupled Node.js/Express API communicating via **Axios** for robust client-server data exchange.
+## ✨ Features
 
-## **🛠️ Tech Stack**
+- Detects facial emotions in real time using FaceAPI.js.
+- Recommends songs based on the detected emotion.
+- Uploads and serves songs using ImageKit.
+- Responsive and user-friendly interface built with React.
+- REST API communication between frontend and backend.
 
-### **Frontend (Client)**
+---
 
-* **React.js (Vite)** – High-performance component-based UI.  
-* **face-api.js** – Deep learning models for facial recognition.  
-* **Axios** – Promise-based HTTP client for API communication.  
-* **Remix Icons** – Vector-based iconography.
+## 🛠 Tech Stack
 
-### **Backend (Server)**
+### Frontend
+- React.js
+- JavaScript
+- FaceAPI.js
+- Axios
+- HTML5
+- CSS3
 
-* **Node.js & Express** – Event-driven, non-blocking I/O runtime.  
-* **Multer** – Middleware for handling multipart/form-data in RAM.  
-* **ImageKit SDK** – Enterprise-grade media management and storage.
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Multer
+- ImageKit SDK
 
-## **🚀 Quick Start**
+---
 
-### **1\. Backend Setup**
+## 👨‍💻 My Contributions
 
-cd server  
-npm install  
-\# Create a .env file with your ImageKit credentials:  
-\# IK\_PUBLIC\_KEY, IK\_PRIVATE\_KEY, IK\_URL\_ENDPOINT  
+- Developed the frontend using React.
+- Developed backend APIs using Node.js and Express.js.
+- Integrated MongoDB for application data management.
+- Integrated FaceAPI.js for real-time facial emotion detection.
+- Integrated ImageKit for cloud-based music storage and delivery.
+- Designed and integrated REST APIs for seamless communication between the frontend and backend.
+
+---
+
+## 📡 API Endpoints
+
+### Get Songs by Mood
+
+```http
+GET /songs?mood=happy
+```
+
+Returns songs matching the detected emotion.
+
+### Upload Songs
+
+```http
+PUT /songs
+```
+
+Uploads a song with an associated mood tag.
+
+---
+
+## 🚀 Installation
+
+### Backend
+
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file and add your ImageKit credentials.
+
+```env
+IK_PUBLIC_KEY=your_public_key
+IK_PRIVATE_KEY=your_private_key
+IK_URL_ENDPOINT=your_url_endpoint
+```
+
+Start the server.
+
+```bash
 node app.js
+```
 
-### **2\. Frontend Setup**
+### Frontend
 
-cd client  
-npm install  
-\# Ensure AI models are placed in /public/models  
+```bash
+cd client
+npm install
 npm run dev
+```
 
-## **📤 Admin Workflow (Postman Upload)**
+Place the FaceAPI.js models inside:
 
-The application utilizes a secure API-first approach for content management. Currently, uploads are handled via **Postman**.
+```
+public/models
+```
 
-**Endpoint:** PUT http://localhost:3000/songs
+---
 
-**Body Configuration (form-data):**
+## 📂 Project Architecture
 
-1. **Key:** song (Type: File) \-\> Select your MP3 file.  
-2. **Key:** mood (Type: Text) \-\> Enter the mood tag (e.g., happy, sad, neutral).
+```
+Client (React)
+        │
+        │ Axios
+        ▼
+Node.js + Express REST API
+        │
+        ├── MongoDB
+        └── ImageKit Cloud Storage
+```
 
-*The backend processes the buffer in memory and offloads to the cloud instantly.*
+---
 
-## **🔌 API Reference**
+## 🎯 Learning Outcomes
 
-| Method | Endpoint | Description |
-| :---- | :---- | :---- |
-| **GET** | /songs?mood=happy | Queries cloud storage for assets matching the inference tag. |
-| **PUT** | /songs | Uploads a song and tags it for specific mood retrieval. |
+- Built a full-stack MERN application.
+- Worked with real-time facial emotion detection using FaceAPI.js.
+- Integrated third-party cloud storage using ImageKit.
+- Designed REST APIs for frontend-backend communication.
+- Improved understanding of API integration and media management.
 
-**Note:** Batch upload functionality (POST /batch) is currently in development and will be released in the next update.
+---
+
+## 📜 License
+
+This project is developed for learning and portfolio purposes.
